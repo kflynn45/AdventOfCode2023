@@ -11,7 +11,6 @@ import (
 )
 
 func main() {
-	//decodePt2("sampleInput2.txt")
 	decodePt2("fullInput.txt")
 }
 
@@ -46,10 +45,7 @@ func decodePt1(filePath string) {
 }
 
 func decodePt2(filePath string) {
-	file, err := os.Open(filePath)
-	if err != nil {
-		log.Fatal(err)
-	}
+	file, _ := os.Open(filePath)
 	defer file.Close()
 
 	var codeSum int
@@ -67,12 +63,7 @@ func decodePt2(filePath string) {
 				}
 			}
 		}
-		// for _, a := range vals {
-		// 	fmt.Print(a)
-		// 	fmt.Print(",")
-		// }
 		sum, _ := strconv.Atoi(vals[0] + vals[len(vals)-1])
-		//fmt.Println(sum)
 		codeSum += sum
 	}
 
